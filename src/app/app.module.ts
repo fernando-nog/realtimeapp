@@ -2,9 +2,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { FirebaseConfig } from './../environments/firebase.config';
+import { AngularFireModule } from 'angularfire2/index';
 
 import { AppComponent } from './app.component';
 import { CadastroPessoaComponent } from './cadastro-pessoa/cadastro-pessoa.component';
+import { CadastroPessoaModule } from './cadastro-pessoa/cadastro-pessoa.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +17,9 @@ import { CadastroPessoaComponent } from './cadastro-pessoa/cadastro-pessoa.compo
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    CadastroPessoaModule,
+    AngularFireModule.initializeApp(FirebaseConfig)
   ],
   providers: [],
   bootstrap: [AppComponent]
