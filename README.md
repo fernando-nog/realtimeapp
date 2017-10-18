@@ -1,5 +1,7 @@
-# Realtimeapp
+# app-angular-4-firebase
+Uma aplicação simples real time com Angular 4 e firebase
 
+# Realtimeapp
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.28.3.
 
 ## Development server
