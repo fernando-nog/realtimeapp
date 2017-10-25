@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CadastroPessoaListaComponent implements OnInit {
 
+  pessoas:Array<any>;
+  
   constructor() { }
 
   ngOnInit() {
+    this.pessoas = new Array<any>();
   }
 
 }
