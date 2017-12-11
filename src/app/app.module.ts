@@ -6,13 +6,11 @@ import { FirebaseConfig } from './../environments/firebase.config';
 import { AngularFireModule } from 'angularfire2/index';
 
 import { AppComponent } from './app.component';
-import { CadastroPessoaComponent } from './cadastro-pessoa/cadastro-pessoa.component';
 import { CadastroPessoaModule } from './cadastro-pessoa/cadastro-pessoa.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    CadastroPessoaComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
