@@ -1,5 +1,6 @@
-import { FormsModule, NgForm } from "@angular/forms";
+import { FormsModule, NgForm } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
+import { AngularFireDatabase } from 'angularfire2/database';
 
 @Component({
   selector: 'app-cadastro-pessoa-form',
@@ -8,22 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CadastroPessoaFormComponent implements OnInit {
 
-  
-  
-  constructor() { }
+  constructor(private angularFire: AngularFireDatabase) {}
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
   form_submit(f: NgForm) {
-    /*
-    this.pessoas.push({ 
-      nome: f.form.controls["nome"].value, 
-      sobrenome: f.form.controls["sobrenome"].value
-    });
+    // tslint:disable-next-line:no-unused-expression
+    this.angularFire.list('pessoas').push(
+      {
+        nome: f.controls.nome.value,
+        sobrenome: f.controls.sobrenome.value
+      })
+      .then((t: any) => console.log('dados gravados: ' + t.key)),
+        (e: any) => console.log(e.message);
 
-    console.log(this.pessoas);
-    */
+    f.controls.nome.setValue('');
+    f.controls.sobrenome.setValue('');
   }
-
 }

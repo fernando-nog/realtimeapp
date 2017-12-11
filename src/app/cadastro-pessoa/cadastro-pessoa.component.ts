@@ -1,3 +1,4 @@
+import { NgForm } from "@angular/forms";
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -11,6 +12,5 @@ export class CadastroPessoaComponent implements OnInit {
 
   ngOnInit() {
   }
-
 
 }

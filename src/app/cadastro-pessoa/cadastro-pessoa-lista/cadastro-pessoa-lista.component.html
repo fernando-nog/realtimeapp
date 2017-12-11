@@ -1,6 +1,7 @@
-<h1>Lista de pessoas</h1>
+
+<h1 *ngIf="pessoas.length > 0">Lista de pessoas</h1>
 <ul>
-  <li *ngFor="let p of pessoas">
-    {{ p.nome + ' ' + p.sobrenome}}
+  <li *ngFor="let p of pessoas| async">
+    {{ p.nome + " " + p.sobrenome}}
   </li>
 </ul>

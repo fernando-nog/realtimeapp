@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 
 @Component({
   selector: 'app-cadastro-pessoa-lista',
@@ -7,12 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CadastroPessoaListaComponent implements OnInit {
 
-  pessoas:Array<any>;
-  
-  constructor() { }
+  pessoas: FirebaseListObservable<any[]>;
 
-  ngOnInit() {
-    this.pessoas = new Array<any>();
+  constructor(db: AngularFireDatabase) {
+    this.pessoas = db.list('pessoas');
   }
+
+  ngOnInit() { }
 
 }
